@@ -3,10 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>QR Code Generator</title>
     </head>
     <body>
-        <p>Hello World</p>
+        <!-- Title -->
+        <section>
+            <header>
+                <h2>QR Code <span>Generator</span></h2>
+            </header>
+        </section>
+
+        <!-- Body -->
+        <section>
+            <div class="container">
+                <div class="box">
+                    <form id="qr-code">
+                        <p>Put down the link below to generate a QR code</p>
+                        <input type="text" placeholder="Gimme the link">
+                        <button title="generate-btn" type="submit">Generate</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

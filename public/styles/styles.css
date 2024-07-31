@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #405D72;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 4rem auto;
+}
+
+header h2 {
+    font-size: 48px;
+    color: #F7E7DC;
+}
+
+header h2 span {
+    color: #FFF8F3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 1rem;
+}
+
+.container .box {
+    width: 600px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
