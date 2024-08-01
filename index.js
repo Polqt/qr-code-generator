@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import QRCode from 'qrcode';
 
 const app = express();
 const port = 3000;

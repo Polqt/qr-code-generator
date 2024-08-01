@@ -43,6 +43,20 @@ header h2 span {
     border: 2px solid;
     border-radius: 12px;
     display: flex;
-    justify-content: center;    
+    flex-direction: column;
+    justify-content: flex-start; 
     align-items: center;
+    padding: 2rem;
+}
+
+form p{
+    font-size: x-large;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
