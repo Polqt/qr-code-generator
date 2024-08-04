@@ -3,9 +3,19 @@ import bodyParser from 'body-parser';
 import qr from 'qr-image';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import pg from 'pg';
 
 const app = express();
 const port = 3000;
+
+const db = new pg.Client({
+    user: "postgres",
+    host: "localhost",
+    database: "",
+    password: "hidalgo001",
+    port: 5432,
+});
+db.connect().catch(err => console.error('Database connection error.', err));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
