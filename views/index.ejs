@@ -21,15 +21,20 @@
         <section>
             <div class="container">
                 <div class="box">
-                    <form>
+                    <form action="/generate" method="POST">
                         <div>
                             <div class="brutalist-container">
-                                <input placeholder="TYPE HERE" class="brutalist-input smooth-type" type="text" />
+                                <input name="link" placeholder="TYPE HERE" class="brutalist-input smooth-type" type="text" required />
                                 <label class="brutalist-label">Link Here</label>
                             </div>
-                            <button>Generate</button>
+                            <button type="submit">Generate</button>
                         </div>
                     </form>
+                    <% if (qrCodeURL) { %>
+                        <div class="qr-code">
+                            <img src="<%= qrCodeURL %>" alt="QR Code">
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </section>
