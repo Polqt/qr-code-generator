@@ -128,17 +128,6 @@ form div {
     transition: all 450ms ease-in-out;
 }
 
-.sparkle {
-    fill: #AAAAAA;
-    transition: all 800ms ease;
-}
-
-.text {
-    font-weight: 600;
-    color: #AAAAAA;
-    font-size: medium;
-}
-
 .btn:hover {
     background: linear-gradient(0deg, #A47CF3, #683FEA);
     box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
@@ -146,10 +135,6 @@ form div {
         0px 0px 0px 4px rgba(255, 255, 255, 0.2),
         0px 0px 180px 0px #9917FF;
     transform: translateY(-2px);
-}
-
-.btn:hover .text {
-    color: white;
 }
 
 button {
