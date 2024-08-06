@@ -11,7 +11,7 @@ const port = 3000;
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "",
+    database: "qrcode",
     password: "hidalgo001",
     port: 5432,
 });
@@ -25,14 +25,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+
 app.get("/", (req, res) => {
     res.render("index", { qrCodeURL: null });
 });
 
-app.post("/generate", (req, res) => {
+app.post("/generate", async (req, res) => {
     const { link } = req.body;
+    if (!link) {
+        return res.render("index", { qrCodeURL: null, error: "Link is required."});
+    }
+
     const qrImage = qr.imageSync(link, { type: 'png' });
     const qrCodeURL = `data:image/png;base64,${qrImage.toString('base64')}`;
+
+    try {
+        await db.query('INSERT INTO qr_codes (link) VALUES ($1)', [link]);
+        console.log('Link inserted into the database: ', link);
+    } catch (err) {
+        console.log("Error inserting link into the databse: ", err);
+    }
+
     res.render("index", { qrCodeURL });
 });
 
